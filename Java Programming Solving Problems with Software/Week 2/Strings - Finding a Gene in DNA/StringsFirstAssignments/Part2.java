@@ -19,7 +19,7 @@ public class Part2 {
         if (dna.indexOf(startCodon) != -1 
         && dna.indexOf(stopCodon,(dna.indexOf(startCodon)+3)) !=-1 ) {
             tempGene = dna.substring(dna.indexOf(startCodon), 
-            (dna.indexOf(stopCodon,(dna.indexOf(startCodon)+3))+3) );
+            dna.indexOf(stopCodon,(dna.indexOf(startCodon)+3))+3 );
          if ((tempGene.length() % 3)==0){
              gene = tempGene;
             }
