@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=CSVMinHumidity
+comment1.params=currentRow\ smallestSoFar
+comment1.target=org.apache.commons.csv.CSVRecord\ getSmallestOfTwo(org.apache.commons.csv.CSVRecord,\ org.apache.commons.csv.CSVRecord)
+comment2.params=parser
+comment2.target=org.apache.commons.csv.CSVRecord\ lowestHumidityInFile(org.apache.commons.csv.CSVParser)
+comment3.params=
+comment3.target=org.apache.commons.csv.CSVRecord\ lowestHumidityInManyFiles()
+comment4.params=
+comment4.target=void\ testLowestHumidityInManyFiles()
+comment5.params=
+comment5.target=void\ testLowestHumidityInDay()
+numComments=6
