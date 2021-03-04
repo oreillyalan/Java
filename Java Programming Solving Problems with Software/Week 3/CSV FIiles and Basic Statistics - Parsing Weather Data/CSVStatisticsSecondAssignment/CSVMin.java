@@ -46,23 +46,43 @@ public class CSVMin {
     }
     
     public String fileWithColdestTemperature () {
+        String currentFile = "";
         CSVRecord smallestSoFar = null;
+        String coldestFileName = "";
         String fileName = "";
         DirectoryResource dirResource = new DirectoryResource();
         for (File file : dirResource.selectedFiles()) {
+            currentFile = file.getName();
             FileResource fileResource = new FileResource(file);
             CSVRecord current = coldestHourInFile(fileResource.getCSVParser());
+            if (Double.parseDouble(current.get("TemperatureF")) == -9999){
+                continue;
+            }
             smallestSoFar = getSmallestOfTwo(current, smallestSoFar);
-            fileName=file.getName();
+            
+            if (smallestSoFar.get("DateUTC") ==
+            current.get("DateUTC") ) {
+                coldestFileName = file.getName();
+            }
+            
+            // fileName+=current.get("TemperatureF")+" "+current.get("DateUTC")+" "+file.getName()+
+            // ": Coldest Temp so Far: "+smallestSoFar.get("TemperatureF")+" "+smallestSoFar.get("DateUTC")+   " on "+coldestFileName +"\r\n";
+            
+                        
+            // fileName+=current.get("TemperatureF")+" "+file.getName()+
+            // ": Coldest Temp so Far: "+smallestSoFar.get("TemperatureF")+" on "+coldestFileName +"\r\n";
+            
+            
         }
-        return fileName;
+        return coldestFileName;
     }
 
     public void testFileWithColdestTemperature() {
-        
+        // System.out.println(fileWithColdestTemperature());
         String coldestFile = fileWithColdestTemperature();
-        System.out.println("Coldest day was in file "+coldestFile);
-        FileResource fr = new FileResource("data/2014/"+coldestFile);
+        String year = coldestFile.substring(8, 12);
+        System.out.println("Coldest day of the "+year+" was in file "+ coldestFile);
+        FileResource fr = new FileResource("data/"+year+"/"+coldestFile);
         CSVRecord coldest = coldestHourInFile(fr.getCSVParser());
         System.out.println("Coldest temperature on that day was  " + coldest.get("TemperatureF"));
         System.out.println("All the Temperatures on the coldest day were :");
