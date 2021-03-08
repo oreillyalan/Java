@@ -7,12 +7,16 @@ public class WordLengths {
        String[] byLength = new String[counts.length];
        StringBuilder sb = new StringBuilder();
         for(String word : resource.words()){
+         // System.out.println(word);
            sb.append(word); 
            if (!Character.isLetter(sb.charAt(0))){
+
                 sb.deleteCharAt(0);
-           }   
+           }       
+           if (sb.length() != 0 ){
            if (!Character.isLetter(sb.charAt(sb.length()-1))){
-                sb.deleteCharAt(sb.length()-1);
+           
+                sb.deleteCharAt(sb.length()-1);}
            }
            
            if (sb.length() >= 30){ count = 30;}

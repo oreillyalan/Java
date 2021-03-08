@@ -64,12 +64,12 @@ public class TestCaesarCipher2 {
     public void simpleTest(){
         
 
-        CaesarCipherTwo cc = new CaesarCipherTwo(17, 3);
-        FileResource resource = new FileResource();
-        System.out.println(resource.asString());
-        System.out.println(cc.encryptTwoKeys(resource.asString()));
-        System.out.println(cc.decryptTwoKeys(cc.encryptTwoKeys(resource.asString())));
-        System.out.println(breakCaesarCipher(cc.encryptTwoKeys(resource.asString())));
+        //CaesarCipherTwo cc = new CaesarCipherTwo(12, 2);
+        // FileResource resource = new FileResource();
+        // System.out.println(resource.asString());
+        //System.out.println(cc.encryptTwoKeys("Hfs cpwewloj loks cd Hoto kyg Cyy."));
+        // System.out.println(cc.decryptTwoKeys(cc.encryptTwoKeys(resource.asString())));
+        System.out.println(breakCaesarCipher("Aal uttx hm aal Qtct Fhljha pl Wbdl. Pvxvxlx!"));
     }
     
     

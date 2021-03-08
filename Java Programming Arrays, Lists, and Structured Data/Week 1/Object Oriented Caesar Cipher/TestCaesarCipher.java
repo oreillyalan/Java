@@ -32,7 +32,7 @@ public class TestCaesarCipher {
         int[] freqs = countLetters(s);
         //System.out.println(""+freqs);
         int maxDex = maxIndex(freqs);
-        //System.out.println(""+maxDex);
+        System.out.println(""+maxDex);
         int dkey = maxDex - 4;
         if (maxDex < 4){
             dkey = 26 - (4-maxDex);
@@ -45,7 +45,7 @@ public class TestCaesarCipher {
     public void simpleTest(){
         
 
-        CaesarCipher cc = new CaesarCipher(18);
+        CaesarCipher cc = new CaesarCipher(15);
         FileResource resource = new FileResource();
         System.out.println(cc.encrypt(resource.asString()));
         System.out.println(cc.decrypt(cc.encrypt(resource.asString())));

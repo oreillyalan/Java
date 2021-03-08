@@ -76,7 +76,7 @@ public class CrackingCipher {
        // System.out.println(decryptTwoKeys("Top ncmy qkff vi vguv vbg ycpx"));
        //
         int count = 0;
-        FileResource resource = new FileResource("data/mysteryTwoKeysPractice.txt");
+        FileResource resource = new FileResource();
         // for(String s : resource.){
             // System.out.println(decryptTwoKeys(s));
             // count++;
